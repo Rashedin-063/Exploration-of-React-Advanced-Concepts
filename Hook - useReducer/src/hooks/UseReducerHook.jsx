@@ -1,27 +1,66 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import Modal from '../components/Modal';
 
+
+ 
 const booksData = [
   { id: 1, name: 'Pather Panchali' },
   { id: 2, name: 'Adarsha Hindu Hotel' },
   { id: 3, name: 'Manab Jomin' },
 ];
 
+const reducer = (state, action) => {
+  //action.type && action.payload
+  
+  if (action.type === "ADD") {
+    const allBooks = [...state.books, action.payload]
+    return {
+      ...state,
+      books: allBooks,
+      isModalOpen: true,
+      modalText: 'Book Added',
+    };
+  }
+  if (action.type === "REMOVE") {
+    return
+  }
+  if (action.type === "CLOSE_MODAL") {
+    return {
+      ...state,
+      isModalOpen: false
+  }
+}
+
+  return state;
+}
+
 const UseReducerHook = () => {
-  const [books, setBooks] = useState(booksData);
+  // const [books, setBooks] = useState(booksData);
+  // const [modalText, setModalText] = useState('');
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const initialState = {
+    books: booksData,
+    modalText: '',
+    isModalOpen: false
+  }
+
+  const [bookState, dispatch] = useReducer(reducer, initialState)
+
   const [bookName, setBookName] = useState('');
-  const [modalText, setModalText] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleAddBook = (e) => {
     e.preventDefault();
+    const newBook = { id: new Date().getTime().toString(), name: bookName };
+    
+    dispatch({type: 'ADD', payload: newBook})
 
-    setBooks((prevState) => {
-      const newBook = { id: new Date().getTime().toString(), name: bookName };
-      return [...prevState, newBook];
-    });
-    setIsModalOpen(true);
-    setModalText('Book is added');
+    // setBooks((prevState) => {
+    //   return [...prevState, newBook];
+    // });
+    // setIsModalOpen(true);
+    // setModalText('Book is added');
+
   };
 
   return (
@@ -29,7 +68,7 @@ const UseReducerHook = () => {
       <div className='bg-slate-900  p-8 rounded-md shadow-xl'>
         <h3 className='text-xl font-semibold border-b px-2 pb-1'>Book List</h3>
         <ol className='text-start space-y-2 mt-4'>
-          {books.map((book, idx) => (
+          {bookState.books.map((book, idx) => (
             <li key={book.id}>
               {' '}
               <span className='mr-4 border-b px-1 rounded-md'>{idx + 1}.</span>
@@ -39,13 +78,15 @@ const UseReducerHook = () => {
         </ol>
         {/* show modal text */}
 
-        {isModalOpen &&
+        {bookState.isModalOpen && (
           <div className='border w-36 mx-auto rounded-md mt-8 text-center py-2'>
-            <Modal modalText={modalText} onClose={() => setIsModalOpen(false)} />
-              
+            <Modal
+              modalText={bookState.modalText}
+              onClose={() => dispatch({type: 'CLOSE_MODAL'})}
+            />
           </div>
-        }
-     
+        )}
+
         {/* add book form */}
         <div>
           <form
