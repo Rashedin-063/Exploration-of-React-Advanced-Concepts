@@ -22,7 +22,13 @@ const reducer = (state, action) => {
     };
   }
   if (action.type === "REMOVE") {
-    return
+    const remainingBooks = state.books.filter(book => book.id !== action.payload)
+    return {
+      ...state,
+      books: remainingBooks,
+      isModalOpen: true,
+      modalText: 'Book Removed',
+    }
   }
   if (action.type === "CLOSE_MODAL") {
     return {
@@ -51,9 +57,14 @@ const UseReducerHook = () => {
 
   const handleAddBook = (e) => {
     e.preventDefault();
-    const newBook = { id: new Date().getTime().toString(), name: bookName };
-    
-    dispatch({type: 'ADD', payload: newBook})
+
+    if (bookName.trim()) {
+      const newBook = { id: new Date().getTime().toString(), name: bookName };
+
+      dispatch({ type: 'ADD', payload: newBook });
+
+      setBookName('');
+    }
 
     // setBooks((prevState) => {
     //   return [...prevState, newBook];
@@ -62,6 +73,11 @@ const UseReducerHook = () => {
     // setModalText('Book is added');
 
   };
+
+  const handleRemove = (id) => {
+   
+    dispatch({ type: 'REMOVE', payload: id });
+  }
 
   return (
     <div className='text-white  flex justify-center items-center text-center   min-h-[90vh]'>
@@ -73,6 +89,9 @@ const UseReducerHook = () => {
               {' '}
               <span className='mr-4 border-b px-1 rounded-md'>{idx + 1}.</span>
               {book.name}
+              <button
+                onClick={() => handleRemove(book.id)}
+                className='ml-4 text-xs bg-yellow-600 px-2 py-1 rounded-md'>Remove</button>
             </li>
           ))}
         </ol>
@@ -94,6 +113,7 @@ const UseReducerHook = () => {
             className='mt-8 flex flex-col space-y-2 mx-8'
           >
             <input
+              value={bookName}
               onChange={(e) => setBookName(e.target.value)}
               className='bg-gray-300  py-1 rounded-md focus:cursor-text text-black placeholder:text-gray-600 pl-4 font-semibold'
               type='text'
