@@ -1,11 +1,14 @@
 // import MemoFn from "./Concepts/MemoFn"
-import UseCallBack from './Concepts/useCallBack';
+// import UseCallBack from './Concepts/useCallBack';
+import UseMemo from './Concepts/useMemo';
+
 
 const App = () => {
   return (
     <div className='app'>
       {/* <MemoFn/> */}
-      <UseCallBack />
+      {/* <UseCallBack /> */}
+      <UseMemo/>
     </div>
   );
 }
