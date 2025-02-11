@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { memo } from "react"
+import { memo, useMemo } from "react"
 
 // const Message = memo( () => {
 //   console.log('hello from message');
@@ -17,14 +17,18 @@ import { memo } from "react"
 // export default Message;
 
 const Message = ({ count, handleMessageIncrement }) => {
-  let number = 0;
-  for (let i = 0; i < 5000000000; i++) {
-    number++;
-  }
+  const calculatedNumber = useMemo(() => {
+    let number = 0;
+    for (let i = 0; i < 5000000000; i++) {
+      number++;
+    }
+    return number;
+  }, [])
+
   console.log('hello from message');
   return (
     <div>
-      <h2 className="text-xl font-semibold text-center">Number {number}</h2>
+      <h2 className="text-xl font-semibold text-center">Number {calculatedNumber}</h2>
       <p className="text-center text-xl">{count} messages sent</p>
       <button className='bg-sky-800 text-white text-sm px-4 py-1 pb-2 rounded-full my-5'  onClick={handleMessageIncrement}>Send Message</button>
     </div>
