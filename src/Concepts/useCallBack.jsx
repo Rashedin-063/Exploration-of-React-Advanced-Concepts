@@ -1,15 +1,22 @@
+
 import { useState } from "react"
 import Message from "../Components/Message";
 
-const MemoFn = () => {
-  const [count, setCount] = useState(0)
+const useCallBack = () => {
+  const [count, setCount] = useState(0);
+  const [toggle, setToggle] = useState(false);
 
-  console.log('hello from increment')
-  
+  console.log('hello from increment');
 
   return (
     <div className='flex flex-col space-y-4'>
-      <h1 className='text-xl font-bold'>Memo Function in React</h1>
+      <h1 className='text-xl font-bold'>useCallBack Hook in React</h1>
+
+      {toggle ? <p>ON</p> : <p>OFF</p>}
+
+      <button onClick={() => setToggle(!toggle)}>
+        Toggle
+      </button>
 
       <h4 className='text-lg font-semibold text-center text-red-400'>
         Count: {count}
@@ -29,8 +36,8 @@ const MemoFn = () => {
           Decrement
         </button>
       </div>
-      <Message count={count}/>
+      <Message count={count} />
     </div>
   );
-}
-export default MemoFn
+};
+export default useCallBack;

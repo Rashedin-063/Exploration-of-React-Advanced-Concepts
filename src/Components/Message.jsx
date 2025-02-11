@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { memo } from "react"
 
 // const Message = memo( () => {
@@ -15,9 +16,9 @@ import { memo } from "react"
 // });
 // export default Message;
 
-const Message = () => {
+const Message = ({count}) => {
   console.log('hello from message');
-  return <p>0 messages sent</p>;
+  return <p>{count} messages sent</p>;
 };
 
 export default memo(Message);
