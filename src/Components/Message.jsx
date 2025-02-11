@@ -16,9 +16,15 @@ import { memo } from "react"
 // });
 // export default Message;
 
-const Message = ({count}) => {
+const Message = ({ count, handleMessageIncrement }) => {
   console.log('hello from message');
-  return <p>{count} messages sent</p>;
+  return (
+    <div>
+      <p className="text-center text-xl">{count} messages sent</p>
+      <button className='bg-sky-800 text-white text-sm px-4 py-1 pb-2 rounded-full my-5'  onClick={handleMessageIncrement}>Send Message</button>
+    </div>
+  );
+
 };
 
 export default memo(Message);

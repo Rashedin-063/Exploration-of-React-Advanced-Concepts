@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import Message from "../Components/Message";
 
 const useCallBack = () => {
@@ -8,13 +8,22 @@ const useCallBack = () => {
 
   console.log('hello from increment');
 
+  const handleMessageIncrement = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
   return (
     <div className='flex flex-col space-y-4'>
-      <h1 className='text-xl font-bold'>useCallBack Hook in React</h1>
+      <h1 className='text-2xl font-bold'>useCallBack Hook in React</h1>
 
-      {toggle ? <p>ON</p> : <p>OFF</p>}
+      <p className='text-xl font-semibold text-center'>
+        {toggle ? 'ON' : 'OFF'}
+      </p>
 
-      <button onClick={() => setToggle(!toggle)}>
+      <button
+        className='bg-amber-800 text-white text-sm px-4 py-1 pb-2 rounded-full'
+        onClick={() => setToggle(!toggle)}
+      >
         Toggle
       </button>
 
@@ -36,7 +45,8 @@ const useCallBack = () => {
           Decrement
         </button>
       </div>
-      <Message count={count} />
+      <Message count={count}
+        handleMessageIncrement={handleMessageIncrement} />
     </div>
   );
 };
