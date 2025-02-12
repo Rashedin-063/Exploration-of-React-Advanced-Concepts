@@ -1,6 +1,7 @@
 // import MemoFn from "./Concepts/MemoFn"
 // import UseCallBack from './Concepts/useCallBack';
 import UseMemo from './Concepts/useMemo';
+import UseCallBackUseMemo from './Concepts/LWS-useCallBack&useMemo';
 
 
 const App = () => {
@@ -8,7 +9,8 @@ const App = () => {
     <div className='app'>
       {/* <MemoFn/> */}
       {/* <UseCallBack /> */}
-      <UseMemo/>
+      {/* <UseMemo/> */}
+      <UseCallBackUseMemo/>
     </div>
   );
 }
