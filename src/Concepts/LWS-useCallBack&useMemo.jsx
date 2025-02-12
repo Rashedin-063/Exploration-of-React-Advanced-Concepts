@@ -7,13 +7,21 @@ function useCallBackUseMemo() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
 
+  // const incrementByOne = useCallback(() => {
+  //   setCount1((prevCount) => prevCount + 1);
+  // }, []);
+
   const incrementByOne = useCallback(() => {
     setCount1((prevCount) => prevCount + 1);
-  }, []);
+  },[])
+
+  // const incrementByFive = useCallback(() => {
+  //   setCount2((prevCount) => prevCount + 5);
+  // }, []);
 
   const incrementByFive = useCallback(() => {
-    setCount2((prevCount) => prevCount + 5);
-  }, []);
+    setCount2((prevCount) => prevCount + 5)
+  },[])
 
   const isEvenOrOdd = useMemo(() => {
     let i = 0;
