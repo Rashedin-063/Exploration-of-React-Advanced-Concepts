@@ -1,6 +1,6 @@
 // import MemoFn from "./Concepts/MemoFn"
 // import UseCallBack from './Concepts/useCallBack';
-import UseMemo from './Concepts/useMemo';
+// import UseMemo from './Concepts/useMemo';
 import UseCallBackUseMemo from './Concepts/LWS-useCallBack&useMemo';
 
 
