@@ -10,9 +10,30 @@ const UseRefHook = () => {
     //  const email = e.target.email.value;
     //  const password = e.target.password.value;
     // console.log(email, password);
+
+    // const formData = new FormData(e.target);
+    // const email = formData.get('email')
+    // const password = formData.get('password');
+
+    // console.log(email, password);
+
+    const formData = new FormData(e.target);
+
+    // for (const[key, value] of formData.entries()) {
+    //   console.log(key, value); 
+    // }
+    
+    formData.append('isAdmin', true);
+    
+    const formObject = Object.fromEntries(formData.entries());
+
+    console.log(formObject);
+    
+    
+    
     
 
-    console.log(emailRef.current.value, passwordRef.current.value);
+    // console.log(emailRef.current.value, passwordRef.current.value);
    
     
     
