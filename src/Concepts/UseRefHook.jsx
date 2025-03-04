@@ -1,8 +1,20 @@
+import { useRef } from "react";
+
 const UseRefHook = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('form submission')
+
+    //  const email = e.target.email.value;
+    //  const password = e.target.password.value;
+    // console.log(email, password);
+    
+
+    console.log(emailRef.current.value, passwordRef.current.value);
+   
+    
     
   }
 
@@ -22,6 +34,7 @@ const UseRefHook = () => {
             id='email'
             placeholder='Enter your email'
             className='py-2 rounded-lg pl-2'
+            ref={emailRef}
           />
         </div>
         <div className='flex flex-col space-y-1'>
@@ -34,6 +47,7 @@ const UseRefHook = () => {
             id='password'
             placeholder='Password'
             className='py-2 rounded-lg pl-2'
+            ref={passwordRef}
           />
         </div>
         <button
