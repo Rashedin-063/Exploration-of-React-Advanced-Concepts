@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
 import Input from "../Components/Input";
 import ForwardedInput from "../Components/Input";
+import MuiTextfield from './../Components/MuiTextfield';
 
 const LWSUseRef = () => {
 
   const emailRef = useRef();
-    const passwordRef = useRef();
+  const passwordRef = useRef();
+  const textfieldRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +30,7 @@ emailRef.current.focus();
       >
         <ForwardedInput ref={emailRef} type='email' name='email' placeholder='Enter your email' />
         <Input ref={passwordRef} type='password' name='password' placeholder='Enter your password' />
+        <MuiTextfield ref={textfieldRef} label="Mui Textfield" variant='outlined'/>
         <button
           type='submit'
           className='mt-6 bg-blue-700 w-full py-2 rounded-lg text-white hover:bg-blue-800'
