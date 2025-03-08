@@ -4,7 +4,8 @@
 // import UseCallBackUseMemo from './Concepts/LWS-useCallBack&useMemo';
 // import UseRefHook from './Concepts/UseRefHook';
 // import LWSUseRef from './Concepts/LWS-useRef';
-import Time from './Components/Time';
+// import Time from './Components/Time';
+import UseReducerAnisul from './Concepts/UseReducer-Anisul';
 
 
 const App = () => {
@@ -16,7 +17,8 @@ const App = () => {
       {/* <UseCallBackUseMemo/> */}
       {/* <UseRefHook/> */}
       {/* <LWSUseRef/> */}
-      <Time/>
+      {/* <Time/> */}
+      <UseReducerAnisul/>
     </div>
   );
 }
