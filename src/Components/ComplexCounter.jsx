@@ -8,10 +8,10 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'increment':
-      return {counter: state.counter + 1}
+      return {counter: state.counter + action.value}
     
     case 'decrement':
-      return state.counter > 0 ? {counter: state.counter -1} : {counter: 0};
+      return state.counter > 0 ? {counter: state.counter - action.value} : {counter: 0};
     
     case 'reset':
       return (state.counter = { counter: 0 });
@@ -39,20 +39,45 @@ const ComplexCounter = () => {
           onClick={() =>
             dispatch({
               type: 'increment',
+              value: 1
             })
           }
         >
-          Increment
+          Increment by 1
+        </button>
+
+        <button
+          className='bg-blue-500 text-white px-4 py-1 rounded-md'
+          onClick={() =>
+            dispatch({
+              type: 'increment',
+              value: 5
+            })
+          }
+        >
+          Increment by 5
         </button>
         <button
           className='bg-violet-500 text-white px-4 py-1 rounded-md'
           onClick={() =>
             dispatch({
               type: 'decrement',
+              value: 1
             })
           }
         >
-          Decrement
+          Decrement by 1
+        </button>
+        <button
+          className='bg-violet-500 text-white px-4 py-1 rounded-md'
+          onClick={() =>
+            dispatch({
+              type: 'decrement',
+              value: 5
+            })
+          }
+        >
+          Decrement by 5
         </button>
         <button
           className='bg-pink-500 text-white px-4 py-1 rounded-md'
