@@ -1,8 +1,19 @@
-import { useState } from "react"
+import { useReducer, useState } from "react"
 
+
+
+const initialState = 0;
+const reducer = (state, action) => {
+
+}
 
 const Counter = () => {
-  const [count, setCount] = useState()
+  // const [count, setCount] = useState()
+
+
+
+  const [] = useReducer(reducer, initialState)
+
   return (
     <div>
       <h3 className="text-3xl lg:text-4xl font-semibold text-center mb-8">Count - 0</h3>
