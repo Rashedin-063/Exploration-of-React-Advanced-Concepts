@@ -1,6 +1,10 @@
+import Counter from "../Components/Counter"
+
 const LWSUseReducer = () => {
   return (
-    <div>LWSUseReducer</div>
+    <div>
+      <Counter/>
+    </div>
   )
 }
 export default LWSUseReducer
