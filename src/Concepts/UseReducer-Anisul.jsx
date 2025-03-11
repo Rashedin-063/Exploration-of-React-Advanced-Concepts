@@ -14,6 +14,12 @@ const booksData = [
   { id: 7, name: 'The Help' },
 ];
 
+const initialState = {
+  books: booksData,
+  isModalOpen: false,
+  modalText: '',
+};
+
 const UseReducerAnisul = () => {
 
   // const [books, setBooks] = useState(booksData)
@@ -22,11 +28,7 @@ const UseReducerAnisul = () => {
 
 
 
-  const [bookState, dispatch] = useReducer(reducer, {
-    books: booksData,
-    isModalOpen: false,
-    modalText: ''
-  })
+  const [bookState, dispatch] = useReducer(reducer, initialState)
   
   const [bookName, setBookName] = useState('')
   const Modal = ({modalText}) => {

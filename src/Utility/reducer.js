@@ -1,4 +1,4 @@
- export const reducer = (state, action) => {
+ export                                                         const reducer = (state, action) => {
     if (action.type === 'ADD') {
       const allBooks = [...state.books, action.payload]
       return {
