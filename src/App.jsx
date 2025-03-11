@@ -5,7 +5,8 @@
 // import UseRefHook from './Concepts/UseRefHook';
 // import LWSUseRef from './Concepts/LWS-useRef';
 // import Time from './Components/Time';
-import UseReducerAnisul from './Concepts/UseReducer-Anisul';
+// import UseReducerAnisul from './Concepts/UseReducer-Anisul';
+import LWSUseReducer from './Concepts/LWS-useReducer';
 
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
       {/* <UseRefHook/> */}
       {/* <LWSUseRef/> */}
       {/* <Time/> */}
-      <UseReducerAnisul/>
+      {/* <UseReducerAnisul/> */}
+      <LWSUseReducer/>
     </div>
   );
 }
