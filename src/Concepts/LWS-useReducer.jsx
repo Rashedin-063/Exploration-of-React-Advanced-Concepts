@@ -1,9 +1,11 @@
-import Counter from "../Components/Counter"
+// import Counter from "../Components/Counter"
+import ComplexCounter from "../Components/ComplexCounter"
 
 const LWSUseReducer = () => {
   return (
     <div>
-      <Counter/>
+      {/* <Counter/> */}
+      <ComplexCounter/>
     </div>
   )
 }
