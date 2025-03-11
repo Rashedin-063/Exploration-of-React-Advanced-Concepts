@@ -1,30 +1,43 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
+
+const initialState = {
+  loading: true,
+  error: '',
+  post: {}
+}
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'ERROR':
+      return {...state, loading: false, error: 'There was a problem fetching data' };
+    case 'SUCCESS':
+      return {...state, loading: false, post: action.payload };
+    default:
+      return state;
+  }
+}
 
 const DataFetchingWithReducer = () => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [post, setPost] = useState({});
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts/1')
-      .then((response) => response.json())
-      .then((data) => {
-        setLoading(false)
-        setPost(data)
-      })
-      .catch(() => {
-        setPost({})
-        setLoading(false)
-        setError(`There was an error fetching`)
-      });
-  }, []);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(post)
+    useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/post/1')
+        .then((response) => response.json())
+        .then((data) => {
+         dispatch({ type: 'SUCCESS', payload: data });
+        })
+        .catch(() => {
+         dispatch({ type: 'ERROR' });
+        });
+    }, []);
   
-
-  return <div>
-    {loading ? 'Loading...' : post.title}
-    {error ? error : null}
-  </div>;
+  
+  return (
+    <div>
+      {state.loading ? 'Loading...' : state.post.title}
+      {state.error ? state.error : 'error'}
+    </div>
+  );
 };
 export default DataFetchingWithReducer;

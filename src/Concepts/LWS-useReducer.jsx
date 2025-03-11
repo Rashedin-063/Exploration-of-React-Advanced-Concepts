@@ -2,7 +2,8 @@
 // import ComplexCounter from "../Components/ComplexCounter"
 // import Counter3 from "../Components/Counter3"
 // import ContextWithReducer from "../Components/ContextWithReducer"
-import DataFetchingWithReducer from "../Components/DataFetchingWithReducer"
+// import DataFetching from '../Components/DataFetching';
+import DataFetchingWithReducer from '../Components/DataFetchingWithReducer';
 
 const LWSUseReducer = () => {
   return (
@@ -11,8 +12,9 @@ const LWSUseReducer = () => {
       {/* <ComplexCounter/> */}
       {/* <Counter3/> */}
       {/* <ContextWithReducer/> */}
+      {/* <DataFetching /> */}
       <DataFetchingWithReducer/>
     </div>
-  )
-}
-export default LWSUseReducer
+  );
+};
+export default LWSUseReducer;
