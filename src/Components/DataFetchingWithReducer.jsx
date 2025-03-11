@@ -36,7 +36,7 @@ const DataFetchingWithReducer = () => {
   return (
     <div>
       {state.loading ? 'Loading...' : state.post.title}
-      {state.error ? state.error : 'error'}
+      {state.error ? state.error : <p className='text-red-600 text-lg font-semibold'>Error fetching data</p>}
     </div>
   );
 };
