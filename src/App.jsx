@@ -7,10 +7,10 @@
 // import Time from './Components/Time';
 // import UseReducerAnisul from './Concepts/UseReducer-Anisul';
 // import LWSUseReducer from './Concepts/LWS-useReducer';
-// import LWSUseContext from './Concepts/Learn-With-Sumit/LWS-useContext';
 // import HigherOrderComponent from './Concepts/Learn-With-Sumit/LWS-HOC';
+// import LWSRenderProps from "./Concepts/Learn-With-Sumit/LWS-RenderProps";
+import LWSUseContext from './Concepts/Learn-With-Sumit/LWS-useContext';
 
-import LWSRenderProps from "./Concepts/Learn-With-Sumit/LWS-RenderProps";
 
 const App = () => {
   return (
@@ -25,8 +25,8 @@ const App = () => {
       {/* <UseReducerAnisul/> */}
       {/* <LWSUseReducer/> */}
       {/* <HigherOrderComponent/> */}
-      <LWSRenderProps/>
-      {/* <LWSUseContext /> */}
+      {/* <LWSRenderProps/> */}
+      <LWSUseContext />
     </div>
   );
 };
