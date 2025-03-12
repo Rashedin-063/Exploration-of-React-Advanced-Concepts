@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import withCounter from './withCounter';
 
 const HoverCounter = (props) => {
