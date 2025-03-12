@@ -10,10 +10,13 @@
 // import HigherOrderComponent from './Concepts/Learn-With-Sumit/LWS-HOC';
 // import LWSRenderProps from "./Concepts/Learn-With-Sumit/LWS-RenderProps";
 
+import Root from "./Components/Context/Root";
+
 
 const App = () => {
   return (
-    <div className='app'>
+    // <div className='app'>
+    <div >
       {/* <MemoFn/> */}
       {/* <UseCallBack /> */}
       {/* <UseMemo/> */}
@@ -25,7 +28,7 @@ const App = () => {
       {/* <LWSUseReducer/> */}
       {/* <HigherOrderComponent/> */}
       {/* <LWSRenderProps/> */}
-    
+    <Root/>
     </div>
   );
 };
