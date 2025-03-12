@@ -1,5 +1,5 @@
-import ClickCounter from "../../Components/ClickCounter"
-import HoverCounter from "../../Components/HoverCounter"
+import ClickCounter from "../../Components/HOC/ClickCounter"
+import HoverCounter from "../../Components/HOC/HoverCounter"
 
 
 const HigherOrderComponent = () => {
