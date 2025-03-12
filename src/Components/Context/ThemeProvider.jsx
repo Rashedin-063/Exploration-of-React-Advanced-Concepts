@@ -3,7 +3,7 @@ import { useState } from "react";
 import { createContext } from "react";
 
 
-const themeContext = createContext()
+export const themeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
   
@@ -24,3 +24,5 @@ const ThemeProvider = ({ children }) => {
   );
 }
 export default ThemeProvider
+
+

@@ -3,6 +3,7 @@ import { useState } from 'react';
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const {}
 
   return (
     <nav className='bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700'>
