@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
-import Button from '../Components/Button';
-import ShowCount from '../components/ShowCount';
-import Title from '../components/Title';
+import Button from '../../Components/Button';
+import ShowCount from '../../components/ShowCount';
+import Title from '../../components/Title';
 
 function useCallBackUseMemo() {
   const [count1, setCount1] = useState(0);

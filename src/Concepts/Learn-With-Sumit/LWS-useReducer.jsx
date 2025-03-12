@@ -3,7 +3,7 @@
 // import Counter3 from "../Components/Counter3"
 // import ContextWithReducer from "../Components/ContextWithReducer"
 // import DataFetching from '../Components/DataFetching';
-import DataFetchingWithReducer from '../Components/DataFetchingWithReducer';
+import DataFetchingWithReducer from '../../Components/DataFetchingWithReducer';
 
 const LWSUseReducer = () => {
   return (
@@ -13,7 +13,7 @@ const LWSUseReducer = () => {
       {/* <Counter3/> */}
       {/* <ContextWithReducer/> */}
       {/* <DataFetching /> */}
-      <DataFetchingWithReducer/>
+      <DataFetchingWithReducer />
     </div>
   );
 };
