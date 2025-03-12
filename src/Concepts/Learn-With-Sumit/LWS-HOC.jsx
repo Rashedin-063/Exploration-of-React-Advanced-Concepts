@@ -1,6 +1,6 @@
+// import ClickCounter from "../../Components/HOC/ClickCounter"
+// import HoverCounter from "../../Components/HOC/HoverCounter"
 import ClickCounter2 from "../../Components/CustomHook/ClickCounter2";
-import ClickCounter from "../../Components/HOC/ClickCounter"
-import HoverCounter from "../../Components/HOC/HoverCounter"
 import HoverCounter2 from './../../Components/CustomHook/HoverCounter';
 
 

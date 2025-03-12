@@ -8,7 +8,7 @@
 // import UseReducerAnisul from './Concepts/UseReducer-Anisul';
 // import LWSUseReducer from './Concepts/LWS-useReducer';
 // import LWSUseContext from './Concepts/Learn-With-Sumit/LWS-useContext';
-import HigherOrderComponent from './Concepts/Learn-With-Sumit/LWS-HOC';
+// import HigherOrderComponent from './Concepts/Learn-With-Sumit/LWS-HOC';
 
 const App = () => {
   return (
@@ -22,8 +22,8 @@ const App = () => {
       {/* <Time/> */}
       {/* <UseReducerAnisul/> */}
       {/* <LWSUseReducer/> */}
-      {/* <LWSUseContext /> */}
-      <HigherOrderComponent/>
+      {/* <HigherOrderComponent/> */}
+      <LWSUseContext />
     </div>
   );
 };
