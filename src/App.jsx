@@ -6,7 +6,8 @@
 // import LWSUseRef from './Concepts/LWS-useRef';
 // import Time from './Components/Time';
 // import UseReducerAnisul from './Concepts/UseReducer-Anisul';
-import LWSUseReducer from './Concepts/LWS-useReducer';
+// import LWSUseReducer from './Concepts/LWS-useReducer';
+import LWSUseContext from './Concepts/LWS-useContext';
 
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
       {/* <LWSUseRef/> */}
       {/* <Time/> */}
       {/* <UseReducerAnisul/> */}
-      <LWSUseReducer/>
+      {/* <LWSUseReducer/> */}
+      <LWSUseContext/>
     </div>
   );
 }
