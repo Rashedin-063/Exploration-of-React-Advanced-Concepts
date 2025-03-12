@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { createContext } from "react";
@@ -12,8 +13,8 @@ const ThemeProvider = ({ children }) => {
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
   
   const themeStyle = {
-    backgroundColor: theme === 'dark'? '#333' : '#fff',
-    color: theme === 'dark'? '#fff' : '#333',
+    backgroundColor: theme === 'dark'? '#000' : '#fff',
+    color: theme === 'dark'? '#fff' : '#000',
     transition: 'background-color 0.5s ease, color 0.5s ease'
   }
 
