@@ -150,6 +150,11 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+
+        {/* theme controller */}
+        <div>
+          <button className='bg-white px-3 py-[2px] rounded-full font-semibold'>Theme</button>
+        </div>
       </div>
     </nav>
   );
