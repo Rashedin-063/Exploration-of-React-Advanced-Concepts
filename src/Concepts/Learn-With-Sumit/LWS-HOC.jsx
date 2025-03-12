@@ -1,3 +1,8 @@
+/**
+ * React Higher Order Components (HOC) is mostly replaced by React custom hooks in React 16.8. It's still used in some third party libraries, but it's very rare.
+ */
+
+
 // import ClickCounter from "../../Components/HOC/ClickCounter"
 // import HoverCounter from "../../Components/HOC/HoverCounter"
 import ClickCounter2 from "../../Components/CustomHook/ClickCounter2";
