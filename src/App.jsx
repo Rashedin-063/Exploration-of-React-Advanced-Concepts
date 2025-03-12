@@ -10,6 +10,8 @@
 // import LWSUseContext from './Concepts/Learn-With-Sumit/LWS-useContext';
 // import HigherOrderComponent from './Concepts/Learn-With-Sumit/LWS-HOC';
 
+import LWSRenderProps from "./Concepts/Learn-With-Sumit/LWS-RenderProps";
+
 const App = () => {
   return (
     <div className='app'>
@@ -23,7 +25,8 @@ const App = () => {
       {/* <UseReducerAnisul/> */}
       {/* <LWSUseReducer/> */}
       {/* <HigherOrderComponent/> */}
-      <LWSUseContext />
+      <LWSRenderProps/>
+      {/* <LWSUseContext /> */}
     </div>
   );
 };
