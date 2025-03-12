@@ -9,7 +9,6 @@
 // import LWSUseReducer from './Concepts/LWS-useReducer';
 // import HigherOrderComponent from './Concepts/Learn-With-Sumit/LWS-HOC';
 // import LWSRenderProps from "./Concepts/Learn-With-Sumit/LWS-RenderProps";
-import LWSUseContext from './Concepts/Learn-With-Sumit/LWS-useContext';
 
 
 const App = () => {
@@ -26,7 +25,7 @@ const App = () => {
       {/* <LWSUseReducer/> */}
       {/* <HigherOrderComponent/> */}
       {/* <LWSRenderProps/> */}
-      <LWSUseContext />
+    
     </div>
   );
 };
